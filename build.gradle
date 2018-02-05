@@ -9,8 +9,8 @@ repositories {
     maven { url 'https://maven.google.com' }
 }
 
-group = 'com.github.gmazzo'
-version = '1.0.3'
+group = 'com.github.filipebrandao'
+version = '0.1'
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
@@ -26,7 +26,7 @@ dependencies {
 
 def repoDesc = 'A simple OKHttp client mock, using a programmable request interceptor Edit'
 def repoName = 'okhttp-client-mock'
-def repoUrl = "https://github.com/gmazzo/$repoName"
+def repoUrl = "https://github.com/filipebrandao/$repoName"
 def repoTags = ['okhttp', 'mock', 'retrofit', 'test']
 
 bintray {
