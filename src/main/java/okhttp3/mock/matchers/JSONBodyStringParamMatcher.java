@@ -9,10 +9,10 @@ import java.util.regex.Pattern;
 import okhttp3.Request;
 import okio.Buffer;
 
-public class JSONBodyParamMatcher extends PatternMatcher {
+public class JSONBodyStringParamMatcher extends PatternMatcher {
     private final String key;
 
-    public JSONBodyParamMatcher(String key, Pattern pattern) {
+    public JSONBodyStringParamMatcher(String key, Pattern pattern) {
         super(pattern);
         this.key = key;
     }
@@ -24,7 +24,7 @@ public class JSONBodyParamMatcher extends PatternMatcher {
             final Buffer buffer = new Buffer();
             copy.body().writeTo(buffer);
             JSONObject jsonObject = new JSONObject(buffer.readUtf8());
-            return jsonObject.getJSONObject(key).toString();
+            return jsonObject.getString(key);
         } catch (final IOException | JSONException e) {
             return "";
         }
