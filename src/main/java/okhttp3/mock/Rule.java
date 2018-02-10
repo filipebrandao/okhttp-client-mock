@@ -19,6 +19,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 import okhttp3.mock.matchers.HeaderMatcher;
+import okhttp3.mock.matchers.JSONBodyStringParamMatcher;
 import okhttp3.mock.matchers.Matcher;
 import okhttp3.mock.matchers.MethodMatcher;
 import okhttp3.mock.matchers.NotMatcher;
@@ -188,6 +189,11 @@ public class Rule {
 
         public Builder paramMatches(String param, Pattern pattern) {
             matches(new QueryParamMatcher(param, pattern));
+            return this;
+        }
+
+        public Builder jsonBodyParamMatches(String param, Pattern pattern) {
+            matches(new JSONBodyStringParamMatcher(param, pattern));
             return this;
         }
 
